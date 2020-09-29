@@ -1,0 +1,14 @@
+﻿@model List<HeroActionCard>
+
+@{
+    ViewData["Title"] = "ViewAllCards";
+}
+
+<h1>ViewAllCards</h1>
+
+@foreach (HeroActionCard card in Model)
+{
+    <a href="/Admin/ViewCard?Cardid=@card.id">@card.CardName </a>
+    <p>Description: player @card.ActionText @card.Target</p>
+    <br />
+}

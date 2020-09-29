@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewData["Title"] = "CreateCardMenu";
+}
+<head>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            th, td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+        </style>
+</head>
+
+<body>
+    <h2>CreateCardMenu</h2><br />
+
+    <form method="post" action="CreateCard">
+        <h4>Basic Card Info:</h4>
+        Card Name:<input type="text" id="cardName" name="cardName" /><br />
+        Play Time in turns (min 1, max 10): <input type="number" id="playSpeed" name="playSpeed" min="1" max="10" /><br />
+        <b>Action Text:</b> <br /> Player: <input type="text" id="actionText" name="actionText" /> other player / all players<br />
+        <b>Cost</b><br />
+        Mana: <input type="number" id="manaCost" name="manaCost" /> <br />
+        Health: <input type="number" id="healthCost" name="healthCost" /> <br />
+        Time in previous turns: <input type="number" id="timeCost" name="timeCost" /> <br />
+
+        <b>Target:</b><br />
+        <table>
+            <tr>
+                <td><label for="self">Self:</label></td>
+                <td><input type="radio" id="self" name="target" value="self" /></td>
+            </tr>
+            <tr>
+                <td><label for="ally">Ally:</label></td>
+                <td><input type="radio" id="ally" name="target" value="ally" /></td>
+                <td><label for="allAllies">All Allies:</label></td>
+                <td><input type="radio" id="allAllies" name="target" value="allAllies" /></td>
+            </tr>
+            <tr>
+                <td><label for="enemy">Enemy:</label></td>
+                <td><input type="radio" id="enemy" name="target" value="enemy" /></td>
+                <td><label for="allEnemy">All Enemies:</label></td>
+                <td><input type="radio" id="allEnemy" name="target" value="allEnemy" /></td>
+            </tr>
+            <tr>
+                <td><label for="everyone">All players:</label></td>
+                <td><input type="radio" id="everyone" name="target" value="everyone" /></td>
+            </tr>
+        </table>
+
+
+
+        <br />
+        <h4>Phyical Attacks</h4>
+        Physical damage Amount:
+        <input type="number" id="physAtk" name="physAtk" /><br /><br />
+
+        <table>
+            <tr>
+                <td><label for="slashing">Slashing: </label></td>
+                <td><input type="checkbox" id="slashing" name="slashing" value="true" /></td>
+                <td><label for="slashBleed"> Bleed Amount:</label></td>
+                <td><input type="number" id="slashBleed" name="slashBleed" min="0" max="100" /></td>
+                <td><label for="slashBleedDuration">Duration (min 0, max 5)</label></td>
+                <td><input type="number" id="slashBleedDuration" name="slashBleedDuration" min="0" max="5" /></td>
+            </tr>
+            <tr>
+                <td><label for="piercing">Pierceing: </label></td>
+                <td><input type="checkbox" id="piercing" name="piercing" value="true" /></td>
+                <td><label for="pierceArmor"> Armor ignore %:</label></td>
+                <td><input type="number" id="pierceArmor" name="pierceArmor" min="1" max="100" /></td>
+            </tr>
+            <tr>
+                <td><label for="bludgeon">Bludegon:</label></td>
+                <td><input type="checkbox" id="bludgeon" name="bludgeon" value="true" /></td>
+                <td><label for="bludgeonLower"> Magic resist lower %:</label></td>
+                <td><input type="number" id="bludgeonLower" name="bludgeonLower" min="1" max="100" /></td>
+                <td><label for="bludgeonLowerDuration">Duration (min 0, max 5)</label></td>
+                <td><input type="number" id="bludgeonLowerDuration" name="bludgeonLowerDuration" min="0" max="5" /></td>
+            </tr>
+            <tr>
+                <td><label for="shield">Shield:</label></td>
+                <td><input type="checkbox" id="shield" name="shield" value="true" /></td>
+                <td><label for="shieldArmor"> Armor % increase:</label></td>
+                <td><input type="number" id="shieldArmor" name="shieldArmor" min="1" max="100" /></td>
+                <td><label for="shieldResistance"> Resistance % increase:</label></td>
+                <td><input type="number" id="shieldResistance" name="shieldResistance" min="1" max="100" /></td>
+                <td><label for="shieldDuration">Duration (min 0, max 5)</label></td>
+                <td><input type="number" id="shieldDuration" name="shieldDuration" min="0" max="5" /></td>
+            </tr>
+            <tr>
+                <td><label for="crush">Crush:</label></td>
+                <td><input type="checkbox" id="crush" name="crush" value="true" /></td>
+                <td><label for="crushLower"> armor lower %:</label></td>
+                <td><input type="number" id="crushLower" name="crushLower" min="1" max="100" /></td>
+                <td><label for="crushLowerDuration">Duration (min 0, max 5)</label></td>
+                <td><input type="number" id="crushLowerDuration" name="crushLowerDuration" min="0" max="5" /></td>
+            </tr>
+        </table>
+        <br /><h4>Magic Attacks</h4>
+        Magical damage Amount:
+        <input type="number" id="magicAtk" name="magicAtk" /><br /><br />
+        <table>
+            <tr>
+                <td><label for="fire">Fire Magic:</label></td>
+                <td><input type="checkbox" id="fire" name="fire" value="true" /></td>
+                <td><label for="fireBurn"> Burn Amount:</label></td>
+                <td><input type="number" id="fireBurn" name="fireBurn" min="0" max="100" /></td>
+                <td><label for="fireBurnDuration">Duration (min 0, max 5)</label></td>
+                <td><input type="number" id="fireBurnDuration" name="fireBurnDuration" min="0" max="5" /></td>
+            </tr>
+            <tr>
+                <td><label for="electric">Electric Magic:</label></td>
+                <td><input type="checkbox" id="electric" name="eletric" value="true" /></td>
+                <td><label for="electricSpeed"> Speed increase %:</label></td>
+                <td><input type="number" id="electricSpeed" name="electricSpeed" min="1" max="100" /></td>
+            </tr>
+            <tr>
+                <td><label for="ice">Ice Magic:</label></td>
+                <td><input type="checkbox" id="ice" name="ice" value="true" /></td>
+                <td><label for="iceSlow"> Speed decrease %:</label></td>
+                <td><input type="number" id="iceSlow" name="iceSlow" min="1" max="100" /></td>
+                <td><label for="iceSlowdDurability"> Freeze length in enemy actions (min 1, max 3):</label></td>
+                <td><input type="number" id="iceSlowdDurability" name="iceSlowdDurability" min="1" max="3" /></td>
+            </tr>
+            <tr>
+                <td><label for="earth">Earth Magic:</label></td>
+                <td><input type="checkbox" id="earth" name="earth" value="true" /></td>
+                <td><label for="earthAbsorb">Absorb Amount:</label></td>
+                <td><input tpye="number" id="earthAbsorb" name="earthAbsorb" min="1" max="100" /></td>
+            </tr>
+            <tr>
+                <td><label for="holy">Holy Magic:</label></td>
+                <td><input type="checkbox" id="holy" name="holy" value="true" /></td>
+                <td><label for="holyHeal">Heal Amount:</label></td>
+                <td><input tpye="number" id="holyHeal" name="holyHeal" min="1" /></td>
+            </tr>
+            <tr>
+                <td><label for="dark">Dark Magic:</label></td>
+                <td><input type="checkbox" id="dark" name="dark" value="true" /></td>
+                <td><label for="darkSteal"> Life Steal %:</label></td>
+                <td><input type="number" id="darkSteal" name="darkSteal" min="1" max="100" /></td>
+            </tr>
+            <tr>
+                <td><label for="time">Time:</label></td>
+                <td><input type="checkbox" id="ice" name="ice" value="true" /></td>
+                <td><label for="timeSpeed"> Time speed %:</label></td>
+                <td><input type="number" id="timeSpeed" name="timeSpeed" min="1" max="100" /></td>
+            </tr>
+
+        </table>
+        <br /><h4>Other Effects</h4>
+        Taunt: <input type="checkbox" id="taunt" name="taunt" value="true" /><br />
+        Dispel: <input type="checkbox" id="dispel" name="dispel" value="true" /><br />
+        Multiple cast (min 2, max 5): <input type="number" id="multi" name="multi" min="2" max="5" /><br />
+        Mana Manipulate: <input type="number" id="mana" name="mana" /><br />
+        <br />
+        <input type="submit" value="Create Card" />
+    </form>
+</body>

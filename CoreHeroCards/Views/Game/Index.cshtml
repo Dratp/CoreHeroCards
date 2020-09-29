@@ -1,0 +1,12 @@
+﻿@model List<Deck>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@foreach (Deck d in Model)
+{
+    @d.Name
+}
+
