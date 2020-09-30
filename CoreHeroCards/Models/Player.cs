@@ -23,9 +23,9 @@ namespace CoreHeroCards.Models
         {
             Player activePlayer = data.GetPlayer(playerID);
             activePlayer.Decks = data.GetDecks(activePlayer.PlayerID);
+            activePlayer.Dolls = data.GetDolls(activePlayer.PlayerID);
 
-
-
+            return activePlayer;
         }
 
 

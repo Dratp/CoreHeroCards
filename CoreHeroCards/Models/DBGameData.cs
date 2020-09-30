@@ -42,11 +42,6 @@ namespace CoreHeroCards.Models
             db.Insert(doll);
         }
 
-        public void CreateDoll(HeroDoll doll)
-        {
-            throw new NotImplementedException();
-        }
-
         public long CreatePlayer(Player newplayer)
         {
             // IDbConnection db = new SqlConnection(server);
@@ -103,9 +98,9 @@ namespace CoreHeroCards.Models
             //Get collection ID's
             collectionIDs = db.Query<long>($"select CollectionID from Deck where DeckNumber = {DeckID}").AsList<long>();
             //Get Cards from player collection
-            foreach (long id in collectionIDs)
+            foreach (long collectionID in collectionIDs)
             {
-                thisDeck.Cards.Add(GetCardByCollectionID(id));
+                thisDeck.Cards.Add(GetCardByCollectionID(playerID, collectionID));
             }
             //thisDeck.Cards = db.Query
 
@@ -142,7 +137,8 @@ namespace CoreHeroCards.Models
 
         public List<HeroDoll> GetDolls(long playerID)
         {
-            throw new NotImplementedException();
+            List<HeroDoll> dolls = db.Query<HeroDoll>($"select * from HeroDoll where PlayerID = {playerID}").AsList<HeroDoll>();
+            return dolls;
         }
 
         public List<HeroActionCard> GetLibrary()
@@ -156,14 +152,17 @@ namespace CoreHeroCards.Models
             return thisplayer;
         }
 
-        List<long> IGameData.GetDecks(long playerID)
+        public HeroActionCard GetCardByCollectionID(long playerID, long collectionID)
         {
-            throw new NotImplementedException();
-        }
-
-        public HeroActionCard GetCardByCollectionID(long collectionID)
-        {
-            throw new NotImplementedException();
+            List<HeroActionCard> playerCollection = GetCollection(playerID);
+            foreach(HeroActionCard card in playerCollection)
+            {
+                if(collectionID == card.CollectionID)
+                {
+                    return card;
+                }
+            }
+            return new HeroActionCard() { CardName = "Error" };
         }
     }
 }
