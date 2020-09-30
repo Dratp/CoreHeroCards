@@ -37,9 +37,9 @@ namespace CoreHeroCards.Controllers
         {
             Player noob = new Player() { Name = userName, Currency = startMoney };
             long id = _data.CreatePlayer(noob);
+            noob = Player.AssemblePlayer(id, _data);
 
-            return View("HomeScreen", id);
-
+            return View("HomeScreen", noob);
         }
 
         public IActionResult UserCheck(string userName)

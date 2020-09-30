@@ -1,7 +1,14 @@
-﻿
+﻿@model Player
 @{
     ViewData["Title"] = "HomeScreen";
 }
 
 <h1>HomeScreen</h1>
 
+<p>Welcome @Model.Name</p>
+<br />
+<p>Dolls = @Model.Dolls.Count</p>
+<br />
+<p>Decks = @Model.Decks.Count</p>
+<br />
+<a class="nav-link text-dark" asp-area="" asp-controller="CardShop" asp-action="Index">Go to Card Store</a>
