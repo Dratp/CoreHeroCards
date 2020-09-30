@@ -17,6 +17,10 @@ namespace CoreHeroCards.Models
         public void CreateDoll(HeroDoll doll);
         public void DeleteDeck(long deckNumber);
         public void DeleteDoll(long dollID);
-
+        public long CreatePlayer(Player newplayer);
+        public long GetPlayerID(string userName);
+        public Player GetPlayer(long playerID);
+        public List<long> GetDeckIDs(long playerID);
+        public HeroActionCard GetCardByCollectionID(long collectionID);
     }
 }

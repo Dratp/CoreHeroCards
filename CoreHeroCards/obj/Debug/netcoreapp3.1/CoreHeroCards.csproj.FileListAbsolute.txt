@@ -119,4 +119,7 @@ C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\bin\Debug\netcoreapp3.1\runtime
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Admin\ViewAllCards.cshtml.g.cs
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Home\LoginPage.cshtml.g.cs
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Home\NewUser.cshtml.g.cs
-C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Game\Index.cshtml.g.cs
+C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\CoreHeroCards.csproj.CoreCompileInputs.cache
+C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\CoreHeroCards.MvcApplicationPartsAssemblyInfo.cache
+C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\bin\Debug\netcoreapp3.1\Dapper.Contrib.dll
+C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Home\HomeScreen.cshtml.g.cs

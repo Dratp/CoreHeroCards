@@ -14,7 +14,7 @@ namespace CoreHeroCards.Controllers
         private readonly ILogger<HomeController> _logger;
         private IGameData _data;
 
-
+        const int startMoney = 10000;
 
 
         public HomeController(ILogger<HomeController> logger, IGameData data)
@@ -33,10 +33,29 @@ namespace CoreHeroCards.Controllers
             return View();
         }
 
-        public IActionResult Register(string userName)
+        public IActionResult RegisterUser(string userName)
         {
-            Player noob = Player.Create(userName);
-            return View("Game/Home");
+            Player noob = new Player() { Name = userName, Currency = startMoney };
+            long id = _data.CreatePlayer(noob);
+
+            return View("HomeScreen", id);
+
+        }
+
+        public IActionResult UserCheck(string userName)
+        {
+            long id = _data.GetPlayerID(userName);
+            if (id == -1)
+            {
+                ViewBag.Message = "There is no player by that name";
+                return View("LoginPage");
+            }
+
+            Player active = Player.AssemblePlayer(id, _data);
+
+            //return Content($"The user id is {id}");
+            return View("HomeScreen", active);
+            // Home screen just links to other parts of the game.. current ideas are DollShop, Battle, CardShop, DeckEdit, DollStats
 
         }
 
@@ -50,5 +69,7 @@ namespace CoreHeroCards.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+
     }
 }
