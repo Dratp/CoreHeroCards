@@ -1,0 +1,20 @@
+﻿@model Player
+@{
+    ViewData["Title"] = "HeroShop";
+}
+
+<h1>HeroShop</h1>
+<form action="/Shop/ShopNavigation">
+    <input type="hidden" name="playerID" value="@Model.PlayerID" />
+    <input type="radio" id="DollCase" name="ShopNav" value="DollCase" /> @*Make a new Doll*@
+    <label for="DollCase">Doll Case</label>
+    @if (Model.Dolls.Count >= 1)
+    {
+        <input type="radio" id="DollBench" name="ShopNav" value="DollBench" /> @*Upgrade your current doll*@
+        <label for="DollBench">Work Bench</label>
+    }
+    <input type="radio" id="CardCase" name="ShopNav" value="CardCase" /> @*Buy Hero Cards*@
+    <label for="CardCase">Card Case</label>
+    <input type="submit" value="Go" />
+</form>
+

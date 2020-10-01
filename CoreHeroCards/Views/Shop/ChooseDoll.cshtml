@@ -1,0 +1,18 @@
+﻿@model Player
+@{
+    ViewData["Title"] = "ChooseDoll";
+}
+
+<h1>ChooseDoll</h1>
+
+<h4>Hi, @Model.Name lets see if we can make one of your dolls better...</h4>
+
+<form>
+    <p>What doll do you want me to take a look at?</p>
+    <select name="UpDoll" id="UpDoll" placeholder="Select Doll">
+        @foreach (HeroDoll doll in Model.Dolls)
+        {
+            <option value="@doll.Name">@doll.Name</option>
+        }
+    </select>
+</form>

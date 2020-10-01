@@ -123,3 +123,4 @@ C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\CoreHer
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\CoreHeroCards.MvcApplicationPartsAssemblyInfo.cache
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\bin\Debug\netcoreapp3.1\Dapper.Contrib.dll
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Home\HomeScreen.cshtml.g.cs
+C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Shop\HeroShop.cshtml.g.cs
