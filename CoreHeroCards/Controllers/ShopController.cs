@@ -46,14 +46,27 @@ namespace CoreHeroCards.Controllers
             return View(doll);
         }
 
-        public IActionResult CardTrader(Player current)
+        public IActionResult CardTrader(Player current) 
         {
             ViewBag.PlayerID = current.PlayerID;
             List<HeroActionCard> fullLibrary = _data.GetLibrary();
             return View("CardCase", fullLibrary);
         } 
             
-
+        public IActionResult BuyCards(long X, long card1, long card2, long card3, long playerID)
+        {
+            List<HeroActionCard> cards = _data.GetLibrary();
+            HeroActionCard theCard = new HeroActionCard();
+            foreach(HeroActionCard card in cards)
+            {
+                if(card.card_id == X)
+                {
+                    theCard = card;
+                }
+            }
+            _data.AddCardToCollection(playerID, theCard);
+            return Content($"{X}, {card1}, {card2}, {card3}");
+        }
 
     }
 }

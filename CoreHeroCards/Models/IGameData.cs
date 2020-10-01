@@ -13,7 +13,7 @@ namespace CoreHeroCards.Models
         public HeroDoll GetDoll(long dollID);
         public List<HeroActionCard> GetLibrary();
         public List<HeroActionCard> GetCollection(long playerID);
-        public void CreateDeck(Deck deck);
+        public void CreateDeck(Deck deck, long DeckID);
         public void CreateDoll(HeroDoll doll, long playerID);
         public void DeleteDeck(long deckNumber);
         public void DeleteDoll(long dollID);
@@ -22,5 +22,7 @@ namespace CoreHeroCards.Models
         public Player GetPlayer(long playerID);
         public List<long> GetDeckIDs(long playerID);
         public HeroActionCard GetCardByCollectionID(long playerID, long collectionID);
+        public void AddCardToCollection(long playerID, HeroActionCard card);
+        public HeroActionCard GetCardFromLibrary(long cardID);
     }
 }

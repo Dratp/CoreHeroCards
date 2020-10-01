@@ -31,11 +31,6 @@ namespace CoreHeroCards.Models
             }
         }
 
-        public void CreateDeck(Deck deck)
-        {
-            throw new NotImplementedException();
-        }
-
         public void CreateDoll(HeroDoll doll, long playerID)
         {
             // IDbConnection db = new SqlConnection(server);
@@ -164,6 +159,26 @@ namespace CoreHeroCards.Models
                 }
             }
             return new HeroActionCard() { CardName = "Error" };
+        }
+
+        public void AddCardToCollection(long playerID, HeroActionCard card)
+        {
+            db.Query($"insert into CardCollection (playerID, cardID, card_level) Values ('{playerID}', '{card.card_id}', 1)");
+        }
+
+        
+
+        {
+            List<HeroActionCard> cards = GetLibrary();
+            HeroActionCard theCard = new HeroActionCard();
+            foreach (HeroActionCard card in cards)
+            {
+                if (card.card_id == cardID)
+                {
+                    theCard = card;
+                }
+            }
+            return theCard;
         }
     }
 }
