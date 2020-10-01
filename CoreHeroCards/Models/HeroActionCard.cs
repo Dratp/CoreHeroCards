@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -56,6 +57,8 @@ namespace CoreHeroCards.Models
         public int CrushLower { get; set; }
         public int CrushLowerDuration { get; set; }
         public long CollectionID { get; set; }
+        [Write(false)]
+        public long ShopCardID { get; set; }
 
     }
 }

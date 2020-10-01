@@ -24,5 +24,7 @@ namespace CoreHeroCards.Models
         public HeroActionCard GetCardByCollectionID(long playerID, long collectionID);
         public void AddCardToCollection(long playerID, HeroActionCard card);
         public HeroActionCard GetCardFromLibrary(long cardID);
+        public List<HeroActionCard> GetShopCards();
+
     }
 }

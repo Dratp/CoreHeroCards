@@ -166,8 +166,7 @@ namespace CoreHeroCards.Models
             db.Query($"insert into CardCollection (playerID, cardID, card_level) Values ('{playerID}', '{card.card_id}', 1)");
         }
 
-        
-
+        public HeroActionCard GetCardFromLibrary(long cardID)
         {
             List<HeroActionCard> cards = GetLibrary();
             HeroActionCard theCard = new HeroActionCard();
@@ -179,6 +178,20 @@ namespace CoreHeroCards.Models
                 }
             }
             return theCard;
+        }
+
+        public void FillShop(int HowManyCards)
+        {
+            Random rand = new Random();
+            rand.Next
+        }
+
+        public List<HeroActionCard> GetShopCards()
+        {
+            List<HeroActionCard> ShopCards = new List<HeroActionCard>();
+            List<long> ShopIDs = new List<long>();
+            ShopCards = db.Query<HeroActionCard>($"").AsList<HeroActionCard>();
+            return ShopCards;
         }
     }
 }
