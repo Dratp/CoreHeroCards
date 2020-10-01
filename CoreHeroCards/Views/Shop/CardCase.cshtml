@@ -1,0 +1,17 @@
+﻿@model List<HeroActionCard>
+@{
+    ViewData["Title"] = "CardCase";
+}
+
+<h1>CardCase</h1>
+
+<form>
+    @for(int i = 1; i< Model.Count; i++)
+    {
+        @*This needs to change into an actual view of the card! or buy a pack model or purchasing*@
+        @*To Buy multiple cards at once I think I need Java or angular *@
+        <input type="checkbox" id="@i" value="@Model[i].card_id"/>
+        <p>Card name: @Model[i].CardName : User @Model[i].ActionText @Model[i].Target</p>
+        <br />
+    }
+</form>

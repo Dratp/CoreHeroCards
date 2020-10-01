@@ -143,7 +143,8 @@ namespace CoreHeroCards.Models
 
         public List<HeroActionCard> GetLibrary()
         {
-            throw new NotImplementedException();
+            List<HeroActionCard> library = db.Query<HeroActionCard>($"select * from HeroActionCard").AsList<HeroActionCard>();
+            return library;
         }
 
         public Player GetPlayer(long playerID)

@@ -36,9 +36,24 @@ namespace CoreHeroCards.Controllers
             }
             else
             {
-                return View("CardCase", current);
+                return RedirectToAction("CardTrader", current);
             }
         }
+
+        public IActionResult WorkBench(long playerID, long UpgradeDollID)
+        {
+            HeroDoll doll = _data.GetDoll(UpgradeDollID);
+            return View(doll);
+        }
+
+        public IActionResult CardTrader(Player current)
+        {
+            ViewBag.PlayerID = current.PlayerID;
+            List<HeroActionCard> fullLibrary = _data.GetLibrary();
+            return View("CardCase", fullLibrary);
+        } 
+            
+
 
     }
 }

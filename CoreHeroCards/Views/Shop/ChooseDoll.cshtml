@@ -7,12 +7,14 @@
 
 <h4>Hi, @Model.Name lets see if we can make one of your dolls better...</h4>
 
-<form>
+<form action="/Shop/WorkBench">
+    <input type="hidden" name="playerID" value="@Model.PlayerID" />
     <p>What doll do you want me to take a look at?</p>
-    <select name="UpDoll" id="UpDoll" placeholder="Select Doll">
+    <select name="UpDoll" id="UpgradeDollID" placeholder="Select Doll">
         @foreach (HeroDoll doll in Model.Dolls)
         {
-            <option value="@doll.Name">@doll.Name</option>
+            <option value="@doll.id">@doll.Name</option>
         }
     </select>
+    <input type="submit" value="Upgrade!" />
 </form>

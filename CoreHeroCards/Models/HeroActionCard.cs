@@ -7,6 +7,7 @@ namespace CoreHeroCards.Models
 {
     public class HeroActionCard
     {
+        public long card_id { get; set; }
         public string CardName { get; set; }  // 25 chars
         public int PlaySpeed { get; set; }
         public string ActionText { get; set; } // 50 chars
