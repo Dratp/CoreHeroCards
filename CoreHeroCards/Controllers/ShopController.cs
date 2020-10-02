@@ -19,6 +19,8 @@ namespace CoreHeroCards.Controllers
         public IActionResult Index(long playerID)
         {
             Player current = Player.AssemblePlayer(playerID, _data);
+            _data.ClearShop();
+            FillCardShop(3);
             return View("HeroShop", current);
             //return Content($"the player ID is: {playerID}");
         }
@@ -49,15 +51,25 @@ namespace CoreHeroCards.Controllers
         public IActionResult CardTrader(Player current) 
         {
             ViewBag.PlayerID = current.PlayerID;
-            List<HeroActionCard> fullLibrary = _data.GetLibrary();
-            return View("CardCase", fullLibrary);
+            List<HeroActionCard> shopcards = _data.AllShopCards();
+            return View("CardCase", shopcards);
         } 
             
-        public IActionResult BuyCards(long X, long card1, long card2, long card3, long playerID)
+        public IActionResult BuyCards(long X, long playerID)
         {
             HeroActionCard theCard = _data.GetCardFromLibrary(X);
             _data.AddCardToCollection(playerID, theCard);
             return Content($"{X}");
+        }
+
+        public void FillCardShop(int HowManyCards)
+        {
+            Random rand = new Random();
+            List<HeroActionCard> fullLibrary = _data.GetLibrary();
+            for (int i = 0; i < HowManyCards; i++)
+            {
+                _data.AddCardToShop(fullLibrary[rand.Next(0,fullLibrary.Count)]);
+            }
         }
 
     }

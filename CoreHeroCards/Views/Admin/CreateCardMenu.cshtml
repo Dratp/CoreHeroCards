@@ -23,6 +23,11 @@
     <form method="post" action="CreateCard">
         <h4>Basic Card Info:</h4>
         Card Name:<input type="text" id="cardName" name="cardName" /><br />
+        Rarity:<input type="radio" id="common" name="rarity" value="common" /><label for="common">Common</label>
+        <input type="radio" id="uncommon" name="rarity" value="uncommon" /><label for="uncommon">Uncommon</label>
+        <input type="radio" id="rare" name="rarity" value="rare" /><label for="rare">Rare</label>
+        <input type="radio" id="legendary" name="rarity" value="legendary" /><label for="legendary">Legendary</label>
+        <input type="radio" id="mythic" name="rarity" value="mythic" /><label for="mythic">Mythic</label>
         Play Time in turns (min 1, max 10): <input type="number" id="playSpeed" name="playSpeed" min="1" max="10" /><br />
         <b>Action Text:</b> <br /> Player: <input type="text" id="actionText" name="actionText" /> other player / all players<br />
         <b>Cost</b><br />
