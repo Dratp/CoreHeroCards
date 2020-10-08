@@ -128,3 +128,4 @@ C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\V
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Shop\DollCase.cshtml.g.cs
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Shop\CardCase.cshtml.g.cs
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Shop\WorkBench.cshtml.g.cs
+C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Player\Collection.cshtml.g.cs

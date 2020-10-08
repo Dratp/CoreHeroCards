@@ -57,9 +57,12 @@ namespace CoreHeroCards.Controllers
             
         public IActionResult BuyCards(long X, long playerID)
         {
-            HeroActionCard theCard = _data.GetCardFromLibrary(X);
+
+            HeroActionCard theCard = GetCardFromShop(X);
             _data.AddCardToCollection(playerID, theCard);
-            return Content($"{X}");
+            _data.DeleteCardFromShop(theCard);
+            Player current = Player.AssemblePlayer(playerID, _data);
+            return RedirectToAction("CardTrader", current);
         }
 
         public void FillCardShop(int HowManyCards)
@@ -70,6 +73,20 @@ namespace CoreHeroCards.Controllers
             {
                 _data.AddCardToShop(fullLibrary[rand.Next(0,fullLibrary.Count)]);
             }
+        }
+
+        public HeroActionCard GetCardFromShop(long ShopID)
+        {
+            List<HeroActionCard> ShopCards = _data.AllShopCards();
+            HeroActionCard theCard = new HeroActionCard();
+            foreach(HeroActionCard card in ShopCards)
+            {
+                if (card.ShopCardID == ShopID)
+                {
+                    theCard = card;
+                }
+            }
+            return theCard;
         }
 
     }

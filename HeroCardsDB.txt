@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [HeroCards]    Script Date: 10/2/2020 11:28:50 AM ******/
+/****** Object:  Database [HeroCards]    Script Date: 10/8/2020 1:56:57 PM ******/
 CREATE DATABASE [HeroCards]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -78,14 +78,14 @@ ALTER DATABASE [HeroCards] SET QUERY_STORE = OFF
 GO
 USE [HeroCards]
 GO
-/****** Object:  User [csharp]    Script Date: 10/2/2020 11:28:50 AM ******/
+/****** Object:  User [csharp]    Script Date: 10/8/2020 1:56:57 PM ******/
 CREATE USER [csharp] FOR LOGIN [csharp] WITH DEFAULT_SCHEMA=[dbo]
 GO
 ALTER ROLE [db_datareader] ADD MEMBER [csharp]
 GO
 ALTER ROLE [db_datawriter] ADD MEMBER [csharp]
 GO
-/****** Object:  Table [dbo].[CardCollection]    Script Date: 10/2/2020 11:28:50 AM ******/
+/****** Object:  Table [dbo].[CardCollection]    Script Date: 10/8/2020 1:56:57 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -101,7 +101,7 @@ CREATE TABLE [dbo].[CardCollection](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Deck]    Script Date: 10/2/2020 11:28:50 AM ******/
+/****** Object:  Table [dbo].[Deck]    Script Date: 10/8/2020 1:56:57 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -118,7 +118,7 @@ CREATE TABLE [dbo].[Deck](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HeroActionCard]    Script Date: 10/2/2020 11:28:50 AM ******/
+/****** Object:  Table [dbo].[HeroActionCard]    Script Date: 10/8/2020 1:56:57 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -176,7 +176,7 @@ CREATE TABLE [dbo].[HeroActionCard](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[HeroDoll]    Script Date: 10/2/2020 11:28:50 AM ******/
+/****** Object:  Table [dbo].[HeroDoll]    Script Date: 10/8/2020 1:56:57 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -206,7 +206,7 @@ CREATE TABLE [dbo].[HeroDoll](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Player]    Script Date: 10/2/2020 11:28:50 AM ******/
+/****** Object:  Table [dbo].[Player]    Script Date: 10/8/2020 1:56:57 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -221,7 +221,7 @@ CREATE TABLE [dbo].[Player](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ShopCards]    Script Date: 10/2/2020 11:28:50 AM ******/
+/****** Object:  Table [dbo].[ShopCards]    Script Date: 10/8/2020 1:56:57 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -239,6 +239,32 @@ SET IDENTITY_INSERT [dbo].[CardCollection] ON
 GO
 INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (2, 6, 4, 1)
 GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (3, 1, 5, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (4, 1, 3, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (5, 1, 4, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (7, 1, 3, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (8, 1, 5, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (9, 1, 1, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (10, 1, 3, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (11, 6, 3, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (12, 6, 5, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (13, 3, 11, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (14, 3, 5, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (15, 3, 7, 1)
+GO
+INSERT [dbo].[CardCollection] ([CollectionID], [playerID], [cardID], [card_level]) VALUES (16, 3, 1, 1)
+GO
 SET IDENTITY_INSERT [dbo].[CardCollection] OFF
 GO
 SET IDENTITY_INSERT [dbo].[HeroActionCard] ON 
@@ -252,6 +278,18 @@ GO
 INSERT [dbo].[HeroActionCard] ([Card_id], [CardName], [Rarity], [PlaySpeed], [ActionText], [ManaCost], [HealthCost], [TimeCost], [Target], [PhysAtk], [Slashing], [SlashBleed], [SlashBleedDuration], [Piercing], [PierceArmor], [Bludgeon], [BludgeonLower], [BludgeonLowerDuration], [Shield], [ShieldArmor], [ShieldResistance], [ShieldDuration], [Crush], [CrushLower], [CrushLowerDuration], [MagicAtk], [Fire], [FireBurn], [FireBurnDuration], [Electric], [ElectricSpeed], [Ice], [IceSlow], [IceSlowDurability], [Earth], [EarthAbsorb], [Holy], [HolyHeal], [Dark], [DarkSteal], [Time], [TimeSpeed], [Taunt], [Dispel], [MultiCast], [ManaManipulate]) VALUES (4, N'Zombie Call', NULL, 5, N'summons a small zombie to bite', 3, 0, 1, N'enemy', 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, NULL, NULL, 0, 0, 0, 0)
 GO
 INSERT [dbo].[HeroActionCard] ([Card_id], [CardName], [Rarity], [PlaySpeed], [ActionText], [ManaCost], [HealthCost], [TimeCost], [Target], [PhysAtk], [Slashing], [SlashBleed], [SlashBleedDuration], [Piercing], [PierceArmor], [Bludgeon], [BludgeonLower], [BludgeonLowerDuration], [Shield], [ShieldArmor], [ShieldResistance], [ShieldDuration], [Crush], [CrushLower], [CrushLowerDuration], [MagicAtk], [Fire], [FireBurn], [FireBurnDuration], [Electric], [ElectricSpeed], [Ice], [IceSlow], [IceSlowDurability], [Earth], [EarthAbsorb], [Holy], [HolyHeal], [Dark], [DarkSteal], [Time], [TimeSpeed], [Taunt], [Dispel], [MultiCast], [ManaManipulate]) VALUES (5, N'Claw', N'uncommon', 0, N'swipes his claws scratching', 0, 0, 0, N'enemy', 5, 1, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0)
+GO
+INSERT [dbo].[HeroActionCard] ([Card_id], [CardName], [Rarity], [PlaySpeed], [ActionText], [ManaCost], [HealthCost], [TimeCost], [Target], [PhysAtk], [Slashing], [SlashBleed], [SlashBleedDuration], [Piercing], [PierceArmor], [Bludgeon], [BludgeonLower], [BludgeonLowerDuration], [Shield], [ShieldArmor], [ShieldResistance], [ShieldDuration], [Crush], [CrushLower], [CrushLowerDuration], [MagicAtk], [Fire], [FireBurn], [FireBurnDuration], [Electric], [ElectricSpeed], [Ice], [IceSlow], [IceSlowDurability], [Earth], [EarthAbsorb], [Holy], [HolyHeal], [Dark], [DarkSteal], [Time], [TimeSpeed], [Taunt], [Dispel], [MultiCast], [ManaManipulate]) VALUES (6, N'Bite', N'common', 1, N'bites', 0, 0, 0, N'enemy', 3, 0, 0, 0, 1, 10, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0)
+GO
+INSERT [dbo].[HeroActionCard] ([Card_id], [CardName], [Rarity], [PlaySpeed], [ActionText], [ManaCost], [HealthCost], [TimeCost], [Target], [PhysAtk], [Slashing], [SlashBleed], [SlashBleedDuration], [Piercing], [PierceArmor], [Bludgeon], [BludgeonLower], [BludgeonLowerDuration], [Shield], [ShieldArmor], [ShieldResistance], [ShieldDuration], [Crush], [CrushLower], [CrushLowerDuration], [MagicAtk], [Fire], [FireBurn], [FireBurnDuration], [Electric], [ElectricSpeed], [Ice], [IceSlow], [IceSlowDurability], [Earth], [EarthAbsorb], [Holy], [HolyHeal], [Dark], [DarkSteal], [Time], [TimeSpeed], [Taunt], [Dispel], [MultiCast], [ManaManipulate]) VALUES (7, N'Charge', N'common', 2, N'charges at', 0, 1, 0, N'enemy', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0)
+GO
+INSERT [dbo].[HeroActionCard] ([Card_id], [CardName], [Rarity], [PlaySpeed], [ActionText], [ManaCost], [HealthCost], [TimeCost], [Target], [PhysAtk], [Slashing], [SlashBleed], [SlashBleedDuration], [Piercing], [PierceArmor], [Bludgeon], [BludgeonLower], [BludgeonLowerDuration], [Shield], [ShieldArmor], [ShieldResistance], [ShieldDuration], [Crush], [CrushLower], [CrushLowerDuration], [MagicAtk], [Fire], [FireBurn], [FireBurnDuration], [Electric], [ElectricSpeed], [Ice], [IceSlow], [IceSlowDurability], [Earth], [EarthAbsorb], [Holy], [HolyHeal], [Dark], [DarkSteal], [Time], [TimeSpeed], [Taunt], [Dispel], [MultiCast], [ManaManipulate]) VALUES (8, N'Meal Time', N'common', 1, N'sits down to eat with', 0, -5, 0, N'ally', -4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0)
+GO
+INSERT [dbo].[HeroActionCard] ([Card_id], [CardName], [Rarity], [PlaySpeed], [ActionText], [ManaCost], [HealthCost], [TimeCost], [Target], [PhysAtk], [Slashing], [SlashBleed], [SlashBleedDuration], [Piercing], [PierceArmor], [Bludgeon], [BludgeonLower], [BludgeonLowerDuration], [Shield], [ShieldArmor], [ShieldResistance], [ShieldDuration], [Crush], [CrushLower], [CrushLowerDuration], [MagicAtk], [Fire], [FireBurn], [FireBurnDuration], [Electric], [ElectricSpeed], [Ice], [IceSlow], [IceSlowDurability], [Earth], [EarthAbsorb], [Holy], [HolyHeal], [Dark], [DarkSteal], [Time], [TimeSpeed], [Taunt], [Dispel], [MultiCast], [ManaManipulate]) VALUES (9, N'Stomp', N'common', 1, N'stomps angrily on the ground and shakes the ', 0, 0, 0, N'allEnemy', 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0)
+GO
+INSERT [dbo].[HeroActionCard] ([Card_id], [CardName], [Rarity], [PlaySpeed], [ActionText], [ManaCost], [HealthCost], [TimeCost], [Target], [PhysAtk], [Slashing], [SlashBleed], [SlashBleedDuration], [Piercing], [PierceArmor], [Bludgeon], [BludgeonLower], [BludgeonLowerDuration], [Shield], [ShieldArmor], [ShieldResistance], [ShieldDuration], [Crush], [CrushLower], [CrushLowerDuration], [MagicAtk], [Fire], [FireBurn], [FireBurnDuration], [Electric], [ElectricSpeed], [Ice], [IceSlow], [IceSlowDurability], [Earth], [EarthAbsorb], [Holy], [HolyHeal], [Dark], [DarkSteal], [Time], [TimeSpeed], [Taunt], [Dispel], [MultiCast], [ManaManipulate]) VALUES (10, N'Windstorm', N'common', 1, N'flaps wings towards', 0, 0, 0, N'allEnemy', 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0)
+GO
+INSERT [dbo].[HeroActionCard] ([Card_id], [CardName], [Rarity], [PlaySpeed], [ActionText], [ManaCost], [HealthCost], [TimeCost], [Target], [PhysAtk], [Slashing], [SlashBleed], [SlashBleedDuration], [Piercing], [PierceArmor], [Bludgeon], [BludgeonLower], [BludgeonLowerDuration], [Shield], [ShieldArmor], [ShieldResistance], [ShieldDuration], [Crush], [CrushLower], [CrushLowerDuration], [MagicAtk], [Fire], [FireBurn], [FireBurnDuration], [Electric], [ElectricSpeed], [Ice], [IceSlow], [IceSlowDurability], [Earth], [EarthAbsorb], [Holy], [HolyHeal], [Dark], [DarkSteal], [Time], [TimeSpeed], [Taunt], [Dispel], [MultiCast], [ManaManipulate]) VALUES (11, N'Lightning Strike', N'uncommon', 2, N'calls lightning to strike', 3, 0, 0, N'enemy', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, NULL, 4, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, NULL, 0, 0, 0, 0)
 GO
 SET IDENTITY_INSERT [dbo].[HeroActionCard] OFF
 GO
@@ -305,3 +343,4 @@ USE [master]
 GO
 ALTER DATABASE [HeroCards] SET  READ_WRITE 
 GO
+

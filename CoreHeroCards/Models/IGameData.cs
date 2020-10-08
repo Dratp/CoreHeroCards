@@ -24,9 +24,8 @@ namespace CoreHeroCards.Models
         public HeroActionCard GetCardByCollectionID(long playerID, long collectionID);
         public void AddCardToCollection(long playerID, HeroActionCard card);
         public HeroActionCard GetCardFromLibrary(long cardID);
-        public List<HeroActionCard> GetShopCards();
         public void AddCardToShop(HeroActionCard card);
-        public void DeleteCardFromShop(long shopID);
+        public void DeleteCardFromShop(HeroActionCard card);
         public void ClearShop();
         public List<HeroActionCard> AllShopCards();
 

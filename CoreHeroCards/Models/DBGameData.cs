@@ -185,22 +185,14 @@ namespace CoreHeroCards.Models
             db.Query($"insert into ShopCards (card_id) Values ({card.card_id})");
         }
 
-        public void DeleteCardFromShop(long shopID)
+        public void DeleteCardFromShop(HeroActionCard card)
         {
-            db.Query($"Delete from ShopCards where ShopCardID = {shopID}");
+            db.Query($"Delete from ShopCards where ShopCardID = {card.ShopCardID}");
         }
 
         public void ClearShop()
         {
             db.Query($"Truncate Table ShopCards");
-        }
-
-        public List<HeroActionCard> GetShopCards()
-        {
-            List<HeroActionCard> ShopCards = new List<HeroActionCard>();
-            List<long> ShopIDs = new List<long>();
-            ShopCards = db.Query<HeroActionCard>($"").AsList<HeroActionCard>();
-            return ShopCards;
         }
 
         public List<HeroActionCard> AllShopCards()

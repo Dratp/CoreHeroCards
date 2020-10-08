@@ -1,0 +1,13 @@
+﻿@model Player
+@{
+    ViewData["Title"] = "Collection";
+}
+
+<h1>Collection</h1>
+
+@foreach(HeroActionCard card in Model.Collection)
+{
+    <p>@card.CardName</p><br />
+    <p>player @card.ActionText @card.Target</p>
+
+}

@@ -11,9 +11,17 @@
 <br />
 <p>Decks = @Model.Decks.Count</p>
 <br />
+<p>Cards in Collection = @Model.Collection.Count</p>
+
+
 <form action="/Shop/Index">
     <input type="hidden" name="playerID" value="@Model.PlayerID" />
     @*<a class="nav-link text-dark" asp-area="" asp-controller="Shop" asp-action="Index">Go to Store</a>*@
     <input type="submit" value="Hero Store" />
+</form>
+
+<form action="/Player/Collection">
+    <input type="hidden" name="playerID" value="@Model.PlayerID" />
+    <input type="submit" value="View Collection" />
 </form>
 
