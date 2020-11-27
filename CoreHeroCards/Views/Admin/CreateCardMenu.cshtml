@@ -28,13 +28,14 @@
         <input type="radio" id="rare" name="rarity" value="rare" /><label for="rare">Rare</label>
         <input type="radio" id="legendary" name="rarity" value="legendary" /><label for="legendary">Legendary</label>
         <input type="radio" id="mythic" name="rarity" value="mythic" /><label for="mythic">Mythic</label>
+        <br />
         Play Time in turns (min 1, max 10): <input type="number" id="playSpeed" name="playSpeed" min="1" max="10" /><br />
         <b>Action Text:</b> <br /> Player: <input type="text" id="actionText" name="actionText" /> other player / all players<br />
         <b>Cost</b><br />
         Mana: <input type="number" id="manaCost" name="manaCost" /> <br />
         Health: <input type="number" id="healthCost" name="healthCost" /> <br />
         Time in previous turns: <input type="number" id="timeCost" name="timeCost" /> <br />
-
+        Primary Requires: <input type="text" id="requires" name="requires"/> SubReq: <input type="text" id="subRequires" name="subRequires" />
         <b>Target:</b><br />
         <table>
             <tr>
@@ -106,6 +107,16 @@
                 <td><input type="number" id="crushLower" name="crushLower" min="1" max="100" /></td>
                 <td><label for="crushLowerDuration">Duration (min 0, max 5)</label></td>
                 <td><input type="number" id="crushLowerDuration" name="crushLowerDuration" min="0" max="5" /></td>
+            </tr>
+            <tr>
+                <td><label for="HitModify">Modifies hit chance:</label></td>
+                <td><input type="checkbox" id="hitModify" name="hitModify" value="true" /></td>
+                <td><label for="hitModifyPhys">Physical hit modifier</label></td>
+                <td><input type="number" id="hitModifyPhys" name="hitModifyPhys" min="1" max="100" /></td>
+                <td><label for="hitModifyMagic">Magical hit modifier</label></td>
+                <td><input type="number" id="hitModifyMagic" name="hitModifyMagic" min="1" max="100" /></td>
+                <td><label for="HitModifyDuration">Duration (min 0, max 5)</label></td>
+                <td><input type="number" id="HitModifyDuration" name="HitModifyDuration" min="0" max="5" /></td>
             </tr>
         </table>
         <br /><h4>Magic Attacks</h4>

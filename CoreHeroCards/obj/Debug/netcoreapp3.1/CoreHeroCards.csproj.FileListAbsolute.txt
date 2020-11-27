@@ -1,6 +1,5 @@
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\bin\Debug\netcoreapp3.1\appsettings.json
-C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\bin\Debug\netcoreapp3.1\CoreHeroCards.exe
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\bin\Debug\netcoreapp3.1\CoreHeroCards.deps.json
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\bin\Debug\netcoreapp3.1\CoreHeroCards.runtimeconfig.json
@@ -129,3 +128,4 @@ C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\V
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Shop\CardCase.cshtml.g.cs
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Shop\WorkBench.cshtml.g.cs
 C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\Razor\Views\Player\Collection.cshtml.g.cs
+C:\DevBuild4\WebApps\CoreHeroCards\CoreHeroCards\obj\Debug\netcoreapp3.1\scopedcss\bundle\CoreHeroCards.styles.css
